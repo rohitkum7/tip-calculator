@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tip Calculator</title>
+  </head>
+  <body>
+    <div>
+      <h1>Tip Calculator</h1>
+      <label for="bill">Bill: <input type="number" id="bill" /></label>
+      <label for="tip_per">Tip: <input type="number" id="tip_per" /></label>
+      <button onclick="calculate()">Calculate</button>
+
+      <h3><span>Total: </span><span id="display"></span></h3>
+
+      <script>
+        let amount = document.getElementById("bill");
+        let tip = document.getElementById("tip_per");
+        let total = document.getElementById("display");
+
+        function calculate() {
+          let total_bill = +amount.value + (+tip.value / 100) * +amount.value;
+
+          total.textContent = total_bill;
+        }
+      </script>
+    </div>
+  </body>
+</html>
